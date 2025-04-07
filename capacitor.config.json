@@ -1,0 +1,10 @@
+{
+  "appId": "com.example.einklauncher",
+  "appName": "E-Ink Launcher",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": true,
+    "webContentsDebuggingEnabled": true
+  }
+}
