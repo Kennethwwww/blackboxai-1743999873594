@@ -1,0 +1,17 @@
+{
+  "name": "eink-launcher",
+  "version": "1.0.0",
+  "description": "E-Ink Device Launcher",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build complete'",
+    "cap:android": "npx cap add android && npx cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/core": "^5.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^5.0.0"
+  }
+}
