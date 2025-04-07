@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Ink Launcher</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Status Bar (now at bottom) -->
+  <header class="status-bar fixed bottom-0 left-0 w-full bg-white p-2 border-t border-gray-200">
+    <div class="flex justify-between items-center">
+      <div class="status-item">
+        <i class="fa-solid fa-battery-full mr-1"></i>
+        <span id="battery-status">100%</span>
+      </div>
+      <div class="status-item">
+        <i class="fa-solid fa-lightbulb mr-1"></i>
+        <button id="frontlight-toggle" class="hover:underline">On</button>
+      </div>
+      <div class="status-item">
+        <i class="fa-solid fa-wifi mr-1"></i>
+        <span id="wifi-status">Connected</span>
+      </div>
+      <div class="status-item">
+        <i class="fa-solid fa-gear"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Homescreen Content -->
+  <main class="pb-12 px-4 h-screen">
+    <h1 class="text-2xl mb-4">Hi, Kenneth</h1>
+    <p class="text-gray-700">App grid will be added here</p>
+  </main>
+
+  <!-- Wi-Fi Modal -->
+  <div id="wifi-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg max-w-sm w-full">
+      <h2 class="text-xl mb-4">Wi-Fi Networks</h2>
+      <div id="wifi-list" class="mb-4">
+        <!-- Networks will be populated here -->
+      </div>
+      <div id="wifi-password-container" class="hidden mb-4">
+        <label class="block mb-2">Password</label>
+        <input type="password" id="wifi-password" class="w-full p-2 border rounded">
+      </div>
+      <div class="flex gap-2">
+        <button id="connect-wifi" class="flex-1 bg-blue-500 text-white p-2 rounded hidden">Connect</button>
+        <button id="disconnect-wifi" class="flex-1 bg-gray-500 text-white p-2 rounded hidden">Disconnect</button>
+        <button id="close-wifi" class="flex-1 bg-gray-200 p-2 rounded">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg max-w-sm w-full">
+      <h2 class="text-xl mb-4">Settings</h2>
+      
+      <div class="mb-4">
+        <label class="block mb-2">Homescreen Title</label>
+        <input type="text" id="title-input" class="w-full p-2 border rounded">
+      </div>
+      
+      <div class="mb-4">
+        <label class="flex items-center">
+          <input type="checkbox" id="show-names" class="mr-2" checked>
+          Show App Names
+        </label>
+      </div>
+      
+      <div class="mb-4">
+        <label class="block mb-2">Grid Columns</label>
+        <select id="grid-columns" class="w-full p-2 border rounded">
+          <option value="3">3 Columns</option>
+          <option value="4" selected>4 Columns</option>
+          <option value="5">5 Columns</option>
+        </select>
+      </div>
+      
+      <button id="save-settings" class="w-full bg-blue-500 text-white p-2 rounded">Save</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
